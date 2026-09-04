@@ -1,0 +1,86 @@
+export const projectFilters = ['All', 'AI/ML', 'Web Development', 'Search', 'IoT']
+
+export const projects = [
+  {
+    id: 'databeagle',
+    name: 'DataBeagle',
+    subtitle: 'AI/ML Search Application',
+    client: 'HITACHI',
+    extraClients: ['RABOBANK'],
+    category: 'AI/ML Search',
+    filters: ['AI/ML', 'Web Development', 'Search'],
+    overview:
+      'An AI/ML-powered search application used in banking and investigation-related environments. It combines intelligent search capabilities and advanced search algorithms to improve content discovery, support investigation workflows, and reduce manual information retrieval effort.',
+    responsibilities: [
+      'Implemented RESTful APIs in React.js to support efficient data retrieval and scalable search operations.',
+      'Contributed to frontend performance and scalability for an enterprise search experience.',
+      'Supported investigation-oriented workflows through search-driven content access.',
+      'Participated in production debugging, Agile delivery, and Jest-based testing.',
+      'Contributed to English and Spanish application translation according to client specifications.',
+    ],
+    technologies: [
+      'AI/ML-powered search',
+      'Search algorithms',
+      'Content retrieval',
+      'RESTful APIs',
+      'React.js',
+      'Performance & scalability',
+      'Jest',
+      'Agile',
+    ],
+    accent: 'from-cyan-400/20 via-sky-400/10 to-transparent',
+  },
+  {
+    id: 'content-lens',
+    name: 'Content Lens',
+    subtitle: 'AI/ML Content Discovery',
+    client: 'LEONARDO',
+    extraClients: [],
+    category: 'AI/ML Content Discovery',
+    filters: ['AI/ML', 'Web Development', 'Search'],
+    overview:
+      'An AI/ML-enabled search application designed for efficient and accurate content discovery. Intelligent search algorithms are used to improve content retrieval and streamline information discovery.',
+    responsibilities: [
+      'Migrated the application from JavaScript to TypeScript to improve performance and security.',
+      'Designed and implemented new modules with APIs, data manipulation, and additional functionality.',
+      'Collaborated with project managers on module design and delivery.',
+      'Participated in code reviews to maintain quality across application modules.',
+    ],
+    technologies: [
+      'AI/ML search',
+      'Content discovery',
+      'JavaScript',
+      'TypeScript',
+      'APIs',
+      'Data manipulation',
+      'Module development',
+      'Code reviews',
+    ],
+    accent: 'from-violet-400/20 via-fuchsia-400/10 to-transparent',
+  },
+  {
+    id: 'fota',
+    name: 'FOTA',
+    subtitle: 'Firmware Over-The-Air',
+    client: 'HARLEY-DAVIDSON',
+    extraClients: [],
+    category: 'IoT',
+    filters: ['IoT', 'Web Development'],
+    overview:
+      'An IoT-based application designed for seamless remote firmware updates. It was implemented as a proof of concept for Harley-Davidson electric bikes and leverages Azure technology and cloud storage.',
+    responsibilities: [
+      'Contributed to an IoT application for remote firmware updates on electric bikes.',
+      'Worked with Azure cloud technology and storage to support update delivery.',
+      'Supported a proof-of-concept experience focused on device performance and future-ready updates.',
+    ],
+    technologies: [
+      'IoT',
+      'Firmware updates',
+      'Azure',
+      'Cloud storage',
+      'Electric vehicle technology',
+      'Proof of concept',
+    ],
+    accent: 'from-sky-400/20 via-teal-400/10 to-transparent',
+  },
+]
