@@ -9,8 +9,6 @@ export const profile = {
   email: 'nikhilj5prime@gmail.com',
   phone: '8800868912',
   phoneHref: 'tel:+918800868912',
-  github: 'https://github.com/nikhilcodesdev',
-  githubLabel: 'nikhilcodesdev',
   company: 'Audax Labs Pvt. Ltd.',
   yearsExperience: 5,
   intro:
@@ -104,8 +102,6 @@ export const personJsonLd = {
     addressRegion: 'Delhi (NCR)',
     addressCountry: 'IN',
   },
-  url: 'https://github.com/nikhilcodesdev',
-  sameAs: ['https://github.com/nikhilcodesdev'],
   worksFor: {
     '@type': 'Organization',
     name: 'Audax Labs Pvt. Ltd.',

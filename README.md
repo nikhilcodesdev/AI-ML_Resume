@@ -38,7 +38,3 @@ None required. The contact form is client-side only and is prepared for a future
 - Resume download: `public/Nikhil_Resume.pdf`
 - Original resume file: `public/Nikhil_Resume.doc`
 - Profile photograph: `src/assets/nikhil-profile.webp`
-
-## GitHub
-
-Repository: [https://github.com/nikhilcodesdev/AI-ML_Resume](https://github.com/nikhilcodesdev/AI-ML_Resume)

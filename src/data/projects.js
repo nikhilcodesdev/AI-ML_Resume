@@ -4,13 +4,13 @@ export const projects = [
   {
     id: 'databeagle',
     name: 'DataBeagle',
-    subtitle: 'AI/ML Search Application',
+    subtitle: 'AI/ML Search Platform',
     client: 'HITACHI',
     extraClients: ['RABOBANK'],
     category: 'AI/ML Search',
     filters: ['AI/ML', 'Web Development', 'Search'],
     overview:
-      'An AI/ML-powered search application used in banking and investigation-related environments. It combines intelligent search capabilities and advanced search algorithms to improve content discovery, support investigation workflows, and reduce manual information retrieval effort.',
+      'Enterprise search application for banking and investigations used by HITACHI and RABOBANK. Leverages advanced AI/ML and search algorithms for threat management, cost reduction, and investigation workflows. Built React.js frontend with RESTful API integration for efficient data retrieval and scalable search operations.',
     responsibilities: [
       'Implemented RESTful APIs in React.js to support efficient data retrieval and scalable search operations.',
       'Contributed to frontend performance and scalability for an enterprise search experience.',
@@ -39,7 +39,7 @@ export const projects = [
     category: 'AI/ML Content Discovery',
     filters: ['AI/ML', 'Web Development', 'Search'],
     overview:
-      'An AI/ML-enabled search application designed for efficient and accurate content discovery. Intelligent search algorithms are used to improve content retrieval and streamline information discovery.',
+      'Cutting-edge search application for the Italian agency LEONARDO harnessing advanced AI/ML algorithms for accurate and efficient content discovery. Migrated codebase from JavaScript to TypeScript for enhanced performance and security. Designed and implemented new modules with APIs, data manipulation, and diverse functionalities.',
     responsibilities: [
       'Migrated the application from JavaScript to TypeScript to improve performance and security.',
       'Designed and implemented new modules with APIs, data manipulation, and additional functionality.',
@@ -67,7 +67,7 @@ export const projects = [
     category: 'IoT',
     filters: ['IoT', 'Web Development'],
     overview:
-      'An IoT-based application designed for seamless remote firmware updates. It was implemented as a proof of concept for Harley-Davidson electric bikes and leverages Azure technology and cloud storage.',
+      'IoT-based application for seamless firmware updates on Harley-Davidson electric bikes using Azure cloud technology and storage. Enables integration of new features and updates, ensuring optimal device performance and a future-ready user experience.',
     responsibilities: [
       'Contributed to an IoT application for remote firmware updates on electric bikes.',
       'Worked with Azure cloud technology and storage to support update delivery.',

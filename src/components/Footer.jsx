@@ -1,4 +1,4 @@
-import { Github, Mail } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import { navLinks, profile } from '../data/portfolio'
 
 export default function Footer() {
@@ -22,11 +22,11 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="flex flex-col gap-3 text-sm">
-          <a href={profile.github} className="inline-flex items-center gap-2 text-mist-300 hover:text-white" target="_blank" rel="noreferrer">
-            <Github size={16} /> GitHub
-          </a>
           <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 text-mist-300 hover:text-white">
             <Mail size={16} /> Email
+          </a>
+          <a href={profile.phoneHref} className="inline-flex items-center gap-2 text-mist-300 hover:text-white">
+            <Phone size={16} /> Phone
           </a>
         </div>
       </div>

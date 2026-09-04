@@ -35,7 +35,6 @@ export default function Experience() {
                         <p className="text-sm text-accent-cyan">{job.period}</p>
                         <h3 className="mt-1 font-display text-2xl text-white">{job.role}</h3>
                         <p className="mt-1 text-mist-300">{job.company}</p>
-                        <p className="mt-1 text-sm text-mist-400">{job.extendedRole}</p>
                       </div>
                       <span className="inline-flex items-center gap-2 text-sm text-mist-400">
                         <MapPin size={14} />
@@ -54,7 +53,31 @@ export default function Experience() {
                         >
                           <div className="border-t border-white/8 px-5 pb-6 sm:px-7">
                             <p className="pt-5 text-mist-200">{job.summary}</p>
-                            <ul className="mt-5 space-y-3 text-sm leading-relaxed text-mist-300">
+                            {job.projectContributions?.length > 0 && (
+                              <div className="mt-6">
+                                <h4 className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+                                  Project contributions
+                                </h4>
+                                <div className="mt-4 space-y-4">
+                                  {job.projectContributions.map((project) => (
+                                    <article
+                                      key={project.name}
+                                      className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"
+                                    >
+                                      <p className="text-xs uppercase tracking-[0.16em] text-accent-cyan">
+                                        {project.client}
+                                      </p>
+                                      <h5 className="mt-1 font-display text-lg text-white">{project.name}</h5>
+                                      <p className="mt-2 text-sm leading-relaxed text-mist-300">{project.detail}</p>
+                                    </article>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            <h4 className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-white">
+                              Responsibilities
+                            </h4>
+                            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-mist-300">
                               {job.responsibilities.map((item) => (
                                 <li key={item} className="flex gap-3">
                                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-cyan" />

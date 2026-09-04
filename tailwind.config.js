@@ -24,8 +24,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Syne', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 0 40px rgba(94, 234, 212, 0.12)',

@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { Github, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import AnimatedSection from './AnimatedSection'
 import { profile } from '../data/portfolio'
 
@@ -13,8 +12,6 @@ function isEmail(value) {
 export default function Contact() {
   const [form, setForm] = useState(initial)
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle')
-  const reduce = useReducedMotion()
 
   const onChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -36,16 +33,13 @@ export default function Contact() {
     e.preventDefault()
     const next = validate()
     setErrors(next)
-    if (Object.keys(next).length) {
-      setStatus('error')
-      return
-    }
-    setStatus('ready')
-  }
+    if (Object.keys(next).length) return
 
-  const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(form.subject || 'Portfolio inquiry')}&body=${encodeURIComponent(
-    `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
-  )}`
+    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+    )}`
+    window.location.href = mailto
+  }
 
   const fields = [
     { name: 'name', label: 'Name', type: 'text' },
@@ -77,13 +71,6 @@ export default function Contact() {
                 <p className="text-white">{profile.phone}</p>
               </div>
             </a>
-            <a href={profile.github} target="_blank" rel="noreferrer" className="card flex items-center gap-4 p-5 transition hover:-translate-y-0.5 hover:border-accent-cyan/30">
-              <Github className="text-accent-cyan" size={18} />
-              <div>
-                <p className="text-xs uppercase tracking-[0.16em] text-mist-400">GitHub</p>
-                <p className="text-white">{profile.githubLabel}</p>
-              </div>
-            </a>
             <div className="card flex items-center gap-4 p-5">
               <MapPin className="text-accent-cyan" size={18} />
               <div>
@@ -94,10 +81,7 @@ export default function Contact() {
           </div>
 
           <form className="card p-5 sm:p-7" onSubmit={onSubmit} noValidate>
-            <p className="text-sm text-mist-400">
-              This form is ready for an email service. Until one is configured, validated messages can be opened in your email client.
-            </p>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {fields.map((field) => (
                 <label key={field.name} className={field.name === 'subject' ? 'sm:col-span-2' : ''}>
                   <span className="text-sm text-mist-300">{field.label}</span>
@@ -124,40 +108,12 @@ export default function Contact() {
                 {errors.message && <span className="mt-1 block text-xs text-red-300">{errors.message}</span>}
               </label>
             </div>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <button
-                type="submit"
-                className="rounded-full bg-accent-cyan px-5 py-3 text-sm font-semibold text-ink-950 transition hover:-translate-y-0.5 hover:bg-white"
-              >
-                Validate message
-              </button>
-              {status === 'ready' && (
-                <a href={mailto} className="rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-white">
-                  Open in email client
-                </a>
-              )}
-            </div>
-            <AnimatePresence>
-              {status === 'error' && (
-                <motion.p
-                  initial={reduce ? false : { opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="mt-4 text-sm text-red-300"
-                >
-                  Please correct the highlighted fields.
-                </motion.p>
-              )}
-              {status === 'ready' && (
-                <motion.p
-                  initial={reduce ? false : { opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 text-sm text-accent-cyan"
-                >
-                  Form is valid. No backend email service is configured, so nothing was sent automatically.
-                </motion.p>
-              )}
-            </AnimatePresence>
+            <button
+              type="submit"
+              className="mt-5 rounded-full bg-accent-cyan px-5 py-3 text-sm font-semibold text-ink-950 transition hover:-translate-y-0.5 hover:bg-white"
+            >
+              Send message
+            </button>
           </form>
         </div>
       </div>
